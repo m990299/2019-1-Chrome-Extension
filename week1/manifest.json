@@ -1,0 +1,30 @@
+{
+	"name": "My First Extension",
+	"manifest_version" : 2,
+	"version": "1.0",
+	"description": "remove all links in namu.wiki",
+	"background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+	"content_scripts": [ 
+        {
+            "matches": ["<all_urls>"], 
+            "js": ["content.js"], 
+            "css": ["content.css"], 
+            "run_at": "document_end" 
+        }
+    ],
+	"browser_action": {
+    	"default_icon": "icon.png",
+    	"default_popup":"popup.html"
+  	},
+  	"permissions": [
+    	"activeTab",
+    	"storage",
+    	"tabs",
+    	"<all_urls>"
+  	]
+}
