@@ -1,0 +1,26 @@
+{
+	"name": "Twitch Dialect",
+	"manifest_version" : 2,
+	"version": "1.0",
+	"description": "Twitch Dialect",
+	"background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+	"content_scripts": [ 
+        {
+            "matches": ["<all_urls>"], 
+            "js": ["content.js"], 
+            "run_at": "document_end" 
+        }
+    ],
+	"browser_action": {
+    	"default_popup":"popup.html"
+  	},
+  	"permissions": [
+      "activeTab",
+      "chrome.storage",
+      "tabs",
+      "<all_urls>"
+  	]
+}
